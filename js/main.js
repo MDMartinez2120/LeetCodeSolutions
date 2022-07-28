@@ -19,25 +19,17 @@ const nums1 = [];
 const nums2 = [2];
 
 let findMedianSortedArrays = function(nums1, nums2) {
-    let merged = [...nums1, ...nums2];
-    let sortedArray = merged.sort();
+    const mergedArray = nums1.concat(nums2);
+    mergedArray.sort(function (a, b) {
+        return a - b
+    });
+    const even = mergedArray.length / 2,
+        isOdd = mergedArray.length % 2;
 
-    const median = () => {
-        return sortedArray.slice().sort((a, b) => a - b)[Math.floor(sortedArray.length / 2)];
-    };
-
-    const mid = () => {
-        sortedArray.sort(function(a, b){ return a - b; });
-        let i = sortedArray.length / 2;
-        return i % 1 === 0 ? (sortedArray[i - 1] + sortedArray[i]) / 2 : sortedArray[Math.floor(i)];
-    }
-
-    if (sortedArray.length === 3){
-        return median();
-    }if (sortedArray.length > 3){
-        return mid();
-    }if (sortedArray.length <= 1){
-        return sortedArray.length.values();
+    if (isOdd > 0) {
+        return mergedArray[Math.floor(mergedArray.length / 2)];
+    } else {
+        return (mergedArray[even] + mergedArray[even - 1]) / 2;
     }
 };
 

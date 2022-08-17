@@ -34,3 +34,36 @@ let findMedianSortedArrays = function(nums1, nums2) {
 };
 
 console.log(findMedianSortedArrays(nums1, nums2));
+
+// You are given an array prices where prices[i] is the price of a given stock on the ith day.
+// You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock.Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.
+
+let maxProfit = function(prices) {
+    let maximumProfit = 0;
+        let minPrice = prices[0]
+
+    for (let sell = 1; sell < prices.length; sell++){
+        let sellPrice = prices[sell]
+        let profit = sellPrice - minPrice
+
+        maximumProfit = Math.max(maximumProfit, profit)
+
+        if (sellPrice < minPrice) minPrice = sellPrice;
+    }
+    return maximumProfit
+};
+
+// Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
+
+let containsDuplicate = function(nums) {
+    const result = nums.some(element => {
+        if (nums.indexOf(element) !== nums.lastIndexOf(element)){
+            return true;
+        }
+        return false;
+    })
+    return result;
+};
+
+
+

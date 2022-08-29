@@ -121,3 +121,26 @@ function isDivisible(n, x, y) {
 }
 
 const countBy = (x, n) => new Array(n).fill(0).map((v, i) => x * (i + 1));
+
+function descendingOrder(num){
+    return parseInt(num.toString().split("").sort().reverse().join(""));
+}
+
+function friend(friends){
+    let newArr = [];
+    for (let i = 0; i < friends.length; i++) {
+        if (friends[i].length === 4) {
+            newArr.push(friends[i]);
+        }
+    }
+    return newArr;
+}
+
+function getMiddle(s) {
+    const middle = Math.floor(s.length / 2);
+    let result = s[middle];
+    if(s.length % 2 === 0) {
+        result = s[middle - 1] + result;
+    }
+    return result;
+}

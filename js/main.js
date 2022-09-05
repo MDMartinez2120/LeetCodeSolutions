@@ -144,3 +144,25 @@ function getMiddle(s) {
     }
     return result;
 }
+
+function highAndLow(numbers){
+    let numArr = numbers.split(" ");
+    let highestNum = Math.max(...numArr);
+    let lowestNum = Math.min(...numArr);
+    return highestNum + " " + lowestNum;
+}
+
+function findNeedle(haystack) {
+    for (let i = 0; i < haystack.length; i++) {
+        if (haystack[i] === "needle") {
+            return "found the needle at position " + i;
+        }
+    }
+}
+
+function firstNonConsecutive(arr) {
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i - 1] + 1 !== arr[i]) return arr[i];
+    }
+    return null;
+}

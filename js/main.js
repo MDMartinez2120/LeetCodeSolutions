@@ -196,3 +196,30 @@ function maxMultiple(divisor, bound){
 }
 
 console.log(maxMultiple(2, 7), 6)
+///////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+function disemvowel(str) {
+    return str.toLowerCase().replaceAll("a", "")
+        .replaceAll("e", "")
+        .replaceAll("i", "")
+        .replaceAll("o", "")
+        .replaceAll("u", "");
+}
+///////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+function duplicateEncode(str){
+    let word = str.toLowerCase();
+    let unique = '';
+    for (let i = 0; i < word.length; i++) {
+        if (word.lastIndexOf(word[i]) === word.indexOf(word[i])) {
+            unique += '(';
+        } else
+            unique += ')';
+    }
+    return unique;
+}
+///////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+function sumTwoSmallestNumbers(numbers) {
+    let numsSorted = numbers.sort(function (a, b) {
+        return a - b;
+    });
+    return numsSorted[0] + numsSorted[1];
+}

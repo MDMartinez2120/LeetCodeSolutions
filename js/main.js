@@ -223,3 +223,30 @@ function sumTwoSmallestNumbers(numbers) {
     });
     return numsSorted[0] + numsSorted[1];
 }
+///////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+function distinct(a) {
+    let dupeArr = a.filter((b, index) => {
+        return a.indexOf(b) === index;
+    });
+
+    if (a !== []){
+        return dupeArr;
+    }else {
+        return 1;
+    }
+
+}
+///////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+function mouthSize(animal) {
+    if (animal.toLowerCase() == 'alligator'){
+        return 'small'
+    }else {
+        return 'wide';
+    }
+}
+///////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+function seatsInTheater(nCols, nRows, col, row) {
+    let colsBehind = nCols - col + 1;
+    let rowsBehind = nRows - row;
+    return colsBehind * rowsBehind;
+}

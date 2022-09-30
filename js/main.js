@@ -250,3 +250,22 @@ function seatsInTheater(nCols, nRows, col, row) {
     let rowsBehind = nRows - row;
     return colsBehind * rowsBehind;
 }
+///////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+function arithmetic(a, b, operator){
+    if (operator === "add") {
+        return a + b;
+    }
+    if (operator === "subtract") {
+        return a - b;
+    }
+    if (operator === "divide") {
+        return a / b;
+    }
+    if (operator === "multiply") {
+        return a * b;
+    }
+}
+///////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+function addBinary(a,b){
+    return (a+b).toString(2)
+}

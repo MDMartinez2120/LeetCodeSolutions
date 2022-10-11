@@ -167,105 +167,124 @@
 //     return null;
 // }
 ///////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-function vaporCode(string) {
-    return string.toUpperCase().replace(/\s/g, "").split("").join("  ");
-}
+// function vaporCode(string) {
+//     return string.toUpperCase().replace(/\s/g, "").split("").join("  ");
+// }
+//
+// console.log(vaporCode('Lets go to the movies'));
+// ///////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+// function rowSumOddNumbers(n) {
+//     return n * n * n;
+// }
+// ///////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+// function addLetters(...letters) {
+//     if (letters.length === 0) {
+//         return 'z';
+//     }
+//     let sum = letters.reduce(
+//         (acc, val) => {
+//             let newAcc = acc + val.charCodeAt(0) - 96;
+//             return newAcc > 26 ? newAcc - 26 : newAcc;
+//         },
+//         0
+//     );
+//     return String.fromCharCode(sum + 96);
+// }
+// ///////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+// function maxMultiple(divisor, bound){
+//     return bound - bound % divisor;
+// }
+//
+// console.log(maxMultiple(2, 7), 6)
+// ///////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+// function disemvowel(str) {
+//     return str.toLowerCase().replaceAll("a", "")
+//         .replaceAll("e", "")
+//         .replaceAll("i", "")
+//         .replaceAll("o", "")
+//         .replaceAll("u", "");
+// }
+// ///////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+// function duplicateEncode(str){
+//     let word = str.toLowerCase();
+//     let unique = '';
+//     for (let i = 0; i < word.length; i++) {
+//         if (word.lastIndexOf(word[i]) === word.indexOf(word[i])) {
+//             unique += '(';
+//         } else
+//             unique += ')';
+//     }
+//     return unique;
+// }
+// ///////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+// function sumTwoSmallestNumbers(numbers) {
+//     let numsSorted = numbers.sort(function (a, b) {
+//         return a - b;
+//     });
+//     return numsSorted[0] + numsSorted[1];
+// }
+// ///////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+// function distinct(a) {
+//     let dupeArr = a.filter((b, index) => {
+//         return a.indexOf(b) === index;
+//     });
+//
+//     if (a !== []){
+//         return dupeArr;
+//     }else {
+//         return 1;
+//     }
+//
+// }
+// ///////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+// function mouthSize(animal) {
+//     if (animal.toLowerCase() == 'alligator'){
+//         return 'small'
+//     }else {
+//         return 'wide';
+//     }
+// }
+// ///////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+// function seatsInTheater(nCols, nRows, col, row) {
+//     let colsBehind = nCols - col + 1;
+//     let rowsBehind = nRows - row;
+//     return colsBehind * rowsBehind;
+// }
+// ///////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+// function arithmetic(a, b, operator){
+//     if (operator === "add") {
+//         return a + b;
+//     }
+//     if (operator === "subtract") {
+//         return a - b;
+//     }
+//     if (operator === "divide") {
+//         return a / b;
+//     }
+//     if (operator === "multiply") {
+//         return a * b;
+//     }
+// }
+// ///////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+// function addBinary(a,b){
+//     return (a+b).toString(2)
+// }
 
-console.log(vaporCode('Lets go to the movies'));
-///////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-function rowSumOddNumbers(n) {
-    return n * n * n;
-}
-///////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-function addLetters(...letters) {
-    if (letters.length === 0) {
-        return 'z';
-    }
-    let sum = letters.reduce(
-        (acc, val) => {
-            let newAcc = acc + val.charCodeAt(0) - 96;
-            return newAcc > 26 ? newAcc - 26 : newAcc;
-        },
-        0
-    );
-    return String.fromCharCode(sum + 96);
-}
-///////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-function maxMultiple(divisor, bound){
-    return bound - bound % divisor;
-}
+const removeElement = (nums, val) => {
+    let left = 0;
+    let right = nums.length - 1;
 
-console.log(maxMultiple(2, 7), 6)
-///////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-function disemvowel(str) {
-    return str.toLowerCase().replaceAll("a", "")
-        .replaceAll("e", "")
-        .replaceAll("i", "")
-        .replaceAll("o", "")
-        .replaceAll("u", "");
-}
-///////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-function duplicateEncode(str){
-    let word = str.toLowerCase();
-    let unique = '';
-    for (let i = 0; i < word.length; i++) {
-        if (word.lastIndexOf(word[i]) === word.indexOf(word[i])) {
-            unique += '(';
-        } else
-            unique += ')';
+    while (left <= right) {
+        console.log("nums-array: " + nums);
+        if (nums[left] === val) {
+            nums[left] = nums[right];
+            right--;
+            console.log("right: " + right);
+        } else {
+            left++;
+            console.log("left: " + left);
+        }
     }
-    return unique;
-}
-///////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-function sumTwoSmallestNumbers(numbers) {
-    let numsSorted = numbers.sort(function (a, b) {
-        return a - b;
-    });
-    return numsSorted[0] + numsSorted[1];
-}
-///////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-function distinct(a) {
-    let dupeArr = a.filter((b, index) => {
-        return a.indexOf(b) === index;
-    });
-
-    if (a !== []){
-        return dupeArr;
-    }else {
-        return 1;
-    }
-
-}
-///////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-function mouthSize(animal) {
-    if (animal.toLowerCase() == 'alligator'){
-        return 'small'
-    }else {
-        return 'wide';
-    }
-}
-///////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-function seatsInTheater(nCols, nRows, col, row) {
-    let colsBehind = nCols - col + 1;
-    let rowsBehind = nRows - row;
-    return colsBehind * rowsBehind;
-}
-///////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-function arithmetic(a, b, operator){
-    if (operator === "add") {
-        return a + b;
-    }
-    if (operator === "subtract") {
-        return a - b;
-    }
-    if (operator === "divide") {
-        return a / b;
-    }
-    if (operator === "multiply") {
-        return a * b;
-    }
-}
-///////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-function addBinary(a,b){
-    return (a+b).toString(2)
-}
+    console.log("trimmed-array: " + nums);
+    return left;
+};
